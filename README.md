@@ -92,6 +92,6 @@ roscd mobile_manipulator_body/config/
 ```
 
 ```sh
-gedit control.yaml
+https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/control.yaml
 ```
 
