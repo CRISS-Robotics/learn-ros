@@ -78,6 +78,10 @@ catkin_make
 ```
 
 ```sh
+source 
+```
+
+```sh
 roscd mobile_manipulator_body/urdf/
 ```
 
@@ -95,3 +99,16 @@ roscd mobile_manipulator_body/config/
 https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/control.yaml
 ```
 
+9. Launch in gazebo
+
+```sh
+roscd mobile_manipulator_body/launch/
+```
+
+```sh
+jj
+```
+
+```sh
+cd ~/catkin_ws/
+```
