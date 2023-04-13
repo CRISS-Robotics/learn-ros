@@ -40,10 +40,26 @@ roscd mobile_manipulator_body
 ```
 
 ```sh
-mkdir config launch meshes urdf
+mkdir config launch urdf
+```
+
+5. Download meshes
+
+```sh
+git clone -b meshes https://github.com/CRISS-Robotics/learn-ros.git
 ```
 
 ```sh
-cd meshes
+mv learn-ros/ meshes/
+```
+
+6. Create URDF
+
+```sh
+cd ..
+```
+
+```sh
+cd urdf
 ```
 
