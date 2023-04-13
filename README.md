@@ -78,7 +78,7 @@ catkin_make
 ```
 
 ```sh
-source 
+source devel/setup.bash
 ```
 
 ```sh
@@ -111,4 +111,16 @@ jj
 
 ```sh
 cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roslaunch mobile_manipulator_body base_gazebo_control.launch
 ```
