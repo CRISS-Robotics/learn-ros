@@ -64,7 +64,7 @@ cd urdf
 ```
 
 ```sh
-jj
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_base.urdf
 ```
 
 7. Check robot in RVIZ
