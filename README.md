@@ -124,3 +124,32 @@ source devel/setup.bash
 ```sh
 roslaunch mobile_manipulator_body base_gazebo_control.launch
 ```
+
+10. Move robot
+
+```sh
+sudo apt install ros-noetic-rqt-robot-steering
+```
+
+```sh
+rosrun rqt_robot_steering rqt_robot_steering
+```
+
+```sh
+rostopic list
+```
+
+```sh
+/robot_base_velocity_controller/cmd_vel
+```
+
+```sh
+rostopic echo /robot_base_velocity_controller/cmd_vel
+```
+
+11. Make robot arm urdf
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
