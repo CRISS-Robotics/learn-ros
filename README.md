@@ -63,3 +63,35 @@ cd ..
 cd urdf
 ```
 
+```sh
+jj
+```
+
+7. Check robot in RVIZ
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+roslaunch urdf_tutorial display.launch model:=robot_base.urdf
+```
+
+8. Control your robot
+
+```sh
+roscd mobile_manipulator_body/config/
+```
+
+```sh
+gedit control.yaml
+```
+
