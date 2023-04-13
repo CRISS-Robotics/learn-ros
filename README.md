@@ -153,3 +153,31 @@ rostopic echo /robot_base_velocity_controller/cmd_vel
 roscd mobile_manipulator_body/urdf/
 ```
 
+```sh
+https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_arm.urdf
+```
+
+12. Test the arm
+
+```sh
+cd ~/catkin_ws/src
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+roslaunch urdf_tutorial display.launch model:=robot_arm.urdf
+```
+
+Change the Fixed Frame to world
+
