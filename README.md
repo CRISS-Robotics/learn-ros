@@ -96,7 +96,7 @@ roscd mobile_manipulator_body/config/
 ```
 
 ```sh
-https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/control.yaml
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/control.yaml
 ```
 
 9. Launch in gazebo
@@ -154,7 +154,7 @@ roscd mobile_manipulator_body/urdf/
 ```
 
 ```sh
-https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_arm.urdf
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_arm.urdf
 ```
 
 12. Test the arm
@@ -179,5 +179,27 @@ roscd mobile_manipulator_body/urdf/
 roslaunch urdf_tutorial display.launch model:=robot_arm.urdf
 ```
 
+```sh
 Change the Fixed Frame to world
+```
+
+13. Add control for arm
+
+```sh
+roscd mobile_manipulator_body/config/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/arm_control.yaml
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/joint_state_controller.yaml
+```
+
+14. Add arm launch code
+
+```sh
+roscd mobile_manipulator_body/launch/
+```
 
