@@ -399,7 +399,7 @@ source devel/setup.bash
 ```
 
 ```sh
-roslaunch mobile_manipulator mobile_manipulator_gazebo.launch
+roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
 ```
 
 ```sh
