@@ -292,3 +292,6 @@ roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
 18. Place this in a world
 
 ```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.world
+```
+
