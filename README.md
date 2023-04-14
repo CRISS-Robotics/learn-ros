@@ -156,7 +156,7 @@ wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_arm.u
 12. Test the arm
 
 ```sh
-cd ~/catkin_ws/src
+cd ~/catkin_ws/
 ```
 
 ```sh
