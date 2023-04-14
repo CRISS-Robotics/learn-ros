@@ -232,3 +232,63 @@ rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_nam
 ```sh
 rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [0, 0, 0, 0, 0], time_from_start: [1,0]}]}' -1
 ```
+
+16. Combine Arm and Body
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/mobile_manipulator.urdf
+```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+roslaunch urdf_tutorial display.launch model:=mobile_manipulator.urdf
+```
+
+17. Control the robot
+
+```sh
+roscd mobile_manipulator_body/launch/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/mobile_manipulator_gazebo.launch
+```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
+```
+
+18. Place this in a world
+
+```sh
