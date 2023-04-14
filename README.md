@@ -398,3 +398,30 @@ source devel/setup.bash
 roslaunch mobile_manipulator mobile_manipulator_gazebo.launch
 ```
 
+```sh
+rosrun rqt_robot_steering rqt_robot_steering
+```
+
+```sh
+/robot_base_velocity_controller/cmd_vel
+```
+
+```sh
+rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [-0.1, 0.5, 0.02, 0, 0], time_from_start: [1,0]}]}' -1
+```
+
+```sh
+rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [0, 0, 0, 0, 0], time_from_start: [1,0]}]}' -1
+```
+
+```sh
+sudo apt install ros-noetic-tf2-tools
+```
+
+```sh
+rosrun tf2_tools view_frames.py
+```
+
+```sh
+evince frames.pdf
+```
