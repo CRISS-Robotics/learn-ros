@@ -295,3 +295,11 @@ roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
 wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.world
 ```
 
+19. Add this code to launch file
+
+```sh
+  <!-- Gazebo post office environment -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/home/test/nav_ws/src/mobile_manipulator/worlds/postoffice.world"/>
+  </include>
+```
