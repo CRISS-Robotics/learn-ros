@@ -380,7 +380,7 @@ Add LIDAR Code in mobile_manipulator.urdf
 </gazebo>
 ```
 
-2. Make everything work
+21. Make everything work
 
 ```sh
 cd ~/catkin_ws/
