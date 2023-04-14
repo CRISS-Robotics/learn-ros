@@ -56,10 +56,6 @@ mv learn-ros/ meshes/
 6. Create URDF
 
 ```sh
-cd ..
-```
-
-```sh
 cd urdf
 ```
 
