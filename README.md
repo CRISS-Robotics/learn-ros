@@ -102,7 +102,7 @@ roscd mobile_manipulator_body/launch/
 ```
 
 ```sh
-jj
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/base_gazebo_control.launch
 ```
 
 ```sh
