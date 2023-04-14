@@ -421,7 +421,3 @@ sudo apt install ros-noetic-tf2-tools
 ```sh
 rosrun tf2_tools view_frames.py
 ```
-
-```sh
-evince frames.pdf
-```
