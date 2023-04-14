@@ -288,6 +288,14 @@ roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
 18. Place this in a world
 
 ```sh
+roscd mobile_manipulator_body/
+```
+
+```sh
+mkdir worlds && cd worlds
+```
+
+```sh
 wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.world
 ```
 
@@ -296,7 +304,7 @@ wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.
 ```sh
   <!-- Gazebo post office environment -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="/home/test/nav_ws/src/mobile_manipulator/worlds/postoffice.world"/>
+    <arg name="world_name" value="/home/(test)/catkin_ws/src/mobile_manipulator_body/worlds/postoffice.world"/>
   </include>
 ```
 
