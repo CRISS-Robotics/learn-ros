@@ -303,3 +303,98 @@ wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.
     <arg name="world_name" value="/home/test/nav_ws/src/mobile_manipulator/worlds/postoffice.world"/>
   </include>
 ```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+20. Add LIDAR
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+Add LIDAR Code in mobile_manipulator.urdf
+
+```sh
+<link name="laser_link">
+  <collision>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+   <geometry>
+    <box size="0.1 0.1 0.1"/>
+   </geometry>
+  </collision>
+  <visual>
+   <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+     <box size="0.05 0.05 0.05"/>
+    </geometry>
+  </visual>
+  <inertial>
+    <mass value="1e-5" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+  </inertial>
+</link>
+
+<joint name="laser_joint" type="fixed">
+  <axis xyz="0 1 0" />
+  <origin xyz="0.350 0 0.115" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="laser_link"/>
+</joint>
+
+<gazebo reference="laser_link">
+  <sensor type="ray" name="laser">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>true</visualize>
+    <update_rate>40</update_rate>
+    <ray>
+    <scan>
+    <horizontal>
+      <samples>720</samples>
+      <resolution>1</resolution>
+      <min_angle>-3.14159</min_angle>
+      <max_angle>3.14159</max_angle>
+    </horizontal>
+    </scan>
+    <range>
+    <min>0.10</min>
+    <max>30.0</max>
+    <resolution>0.01</resolution>
+    </range>
+    </ray>
+    <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+      <topicName>/scan</topicName>
+      <frameName>laser_link</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+```
+
+2. Make everything work
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roslaunch mobile_manipulator mobile_manipulator_gazebo.launch
+```
+
