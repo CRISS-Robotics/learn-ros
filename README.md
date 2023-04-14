@@ -186,11 +186,11 @@ roscd mobile_manipulator_body/config/
 ```
 
 ```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/arm_control.yaml
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/arm_control.yaml
 ```
 
 ```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/joint_state_controller.yaml
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/joint_state_controller.yaml
 ```
 
 14. Add arm launch code
