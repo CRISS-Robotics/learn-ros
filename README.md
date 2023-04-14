@@ -266,7 +266,7 @@ roscd mobile_manipulator_body/launch/
 ```
 
 ```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/mobile_manipulator_gazebo.launch
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/mobile_manipulator_gazebo.launch
 ```
 
 ```sh
