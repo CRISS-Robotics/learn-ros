@@ -142,185 +142,7 @@ rostopic list
 ```sh
 rostopic echo /robot_base_velocity_controller/cmd_vel
 ```
-
-11. Make robot arm urdf
-
-```sh
-roscd mobile_manipulator_body/urdf/
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_arm.urdf
-```
-
-12. Test the arm
-
-```sh
-cd ~/catkin_ws/
-```
-
-```sh
-catkin_make
-```
-
-```sh
-source devel/setup.bash
-```
-
-```sh
-roscd mobile_manipulator_body/urdf/
-```
-
-```sh
-roslaunch urdf_tutorial display.launch model:=robot_arm.urdf
-```
-
-```sh
-Change the Fixed Frame to world
-```
-
-13. Add control for arm
-
-```sh
-roscd mobile_manipulator_body/config/
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/arm_control.yaml
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/joint_state_controller.yaml
-```
-
-14. Add arm launch code
-
-```sh
-roscd mobile_manipulator_body/launch/
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/arm_gazebo_control.launch
-```
-
-```sh
-cd ~/catkin_ws/
-```
-
-```sh
-catkin_make
-```
-
-```sh
-source devel/setup.bash
-```
-
-```sh
-roslaunch mobile_manipulator_body arm_gazebo_control.launch
-```
-
-15. Test arm
-
-```sh
-rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [-0.1, 0.5, 0.02, 0, 0], time_from_start: [1,0]}]}' -1
-```
-
-```sh
-rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [0, 0, 0, 0, 0], time_from_start: [1,0]}]}' -1
-```
-
-16. Combine Arm and Body
-
-```sh
-roscd mobile_manipulator_body/urdf/
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/mobile_manipulator.urdf
-```
-
-```sh
-cd ~/catkin_ws/
-```
-
-```sh
-catkin_make
-```
-
-```sh
-source devel/setup.bash
-```
-
-```sh
-roscd mobile_manipulator_body/urdf/
-```
-
-```sh
-roslaunch urdf_tutorial display.launch model:=mobile_manipulator.urdf
-```
-
-17. Control the robot
-
-```sh
-roscd mobile_manipulator_body/launch/
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/mobile_manipulator_gazebo.launch
-```
-
-```sh
-cd ~/catkin_ws/
-```
-
-```sh
-catkin_make
-```
-
-```sh
-source devel/setup.bash
-```
-
-```sh
-roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
-```
-
-18. Place this in a world
-
-```sh
-roscd mobile_manipulator_body/
-```
-
-```sh
-mkdir worlds && cd worlds
-```
-
-```sh
-wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.world
-```
-
-19. Add this code to launch file
-
-```sh
-  <!-- Gazebo post office environment -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="/home/(test)/catkin_ws/src/mobile_manipulator_body/worlds/postoffice.world"/>
-  </include>
-```
-
-```sh
-cd ~/catkin_ws/
-```
-
-```sh
-catkin_make
-```
-
-```sh
-source devel/setup.bash
-```
-
-20. Add LIDAR
+11. Add LIDAR
 
 ```sh
 roscd mobile_manipulator_body/urdf/
@@ -383,6 +205,183 @@ Add LIDAR Code in mobile_manipulator.urdf
   </sensor>
 </gazebo>
 ```
+12. Make robot arm urdf
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/robot_arm.urdf
+```
+
+13. Test the arm
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+roslaunch urdf_tutorial display.launch model:=robot_arm.urdf
+```
+
+```sh
+Change the Fixed Frame to world
+```
+
+14. Add control for arm
+
+```sh
+roscd mobile_manipulator_body/config/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/arm_control.yaml
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/joint_state_controller.yaml
+```
+
+15. Add arm launch code
+
+```sh
+roscd mobile_manipulator_body/launch/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/arm_gazebo_control.launch
+```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roslaunch mobile_manipulator_body arm_gazebo_control.launch
+```
+
+16. Test arm
+
+```sh
+rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [-0.1, 0.5, 0.02, 0, 0], time_from_start: [1,0]}]}' -1
+```
+
+```sh
+rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["arm_base_joint","shoulder_joint", "bottom_wrist_joint", "elbow_joint","top_wrist_joint"], points: [{positions: [0, 0, 0, 0, 0], time_from_start: [1,0]}]}' -1
+```
+
+17. Combine Arm and Body
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/mobile_manipulator.urdf
+```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roscd mobile_manipulator_body/urdf/
+```
+
+```sh
+roslaunch urdf_tutorial display.launch model:=mobile_manipulator.urdf
+```
+
+18. Control the robot
+
+```sh
+roscd mobile_manipulator_body/launch/
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/mobile_manipulator_gazebo.launch
+```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roslaunch mobile_manipulator_body mobile_manipulator_gazebo.launch
+```
+
+19. Place this in a world
+
+```sh
+roscd mobile_manipulator_body/
+```
+
+```sh
+mkdir worlds && cd worlds
+```
+
+```sh
+wget https://raw.githubusercontent.com/CRISS-Robotics/learn-ros/main/postoffice.world
+```
+
+20. Add this code to launch file
+
+```sh
+  <!-- Gazebo post office environment -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/home/(test)/catkin_ws/src/mobile_manipulator_body/worlds/postoffice.world"/>
+  </include>
+```
+
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
 
 21. Make everything work
 
