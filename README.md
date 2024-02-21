@@ -205,6 +205,23 @@ Add LIDAR Code in mobile_manipulator.urdf
   </sensor>
 </gazebo>
 ```
+Check it out in gazebo
+```sh
+cd ~/catkin_ws/
+```
+
+```sh
+catkin_make
+```
+
+```sh
+source devel/setup.bash
+```
+
+```sh
+roslaunch mobile_manipulator_body base_gazebo_control.launch
+```
+
 12. Make robot arm urdf
 
 ```sh
